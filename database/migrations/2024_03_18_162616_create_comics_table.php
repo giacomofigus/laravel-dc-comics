@@ -19,7 +19,7 @@ return new class extends Migration
             $table->decimal('prezzo', 8, 2); 
             $table->string('series');
             $table->date('sale_date');
-            $table->string('tipo');
+            $table->string('type');
             $table->timestamps();
         });
     }
