@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Comic;
 
 class ComicController extends Controller
 {
@@ -22,7 +23,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages/comicsViews.create');
     }
 
     /**
@@ -30,7 +31,15 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+
+        ]);
+    
+
+        $newComic = Comic::create($validatedData);
+        return redirect()->route('comics');
+
     }
 
     /**
@@ -38,7 +47,9 @@ class ComicController extends Controller
      */
     public function show(string $id)
     {
-        // $comic = Comic::find($id);
+        $comic = Comic::find($id);
+
+        return view('pages/comicsViews.show', compact('comic'));
     }
 
     /**
