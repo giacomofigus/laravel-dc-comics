@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('main')
-    <main>
+    <main >
         {{-- {{dd($comics)}} --}}
-        <h1 class="text-4xl font-extrabold mb-5 leading-none tracking-tight text-gray-900 ">Lista Comics</h1>
-        <div class="">
+        <h1 class="text-4xl font-extrabold mb-4 leading-none tracking-tight text-slate-100 px-5 py-3">Lista Comics</h1>
+        <div class="px-5 py-4">
             
             <a
             name=""
@@ -19,12 +19,13 @@
                     <tr class="bg-gray-200">
                         <th class="px-4 py-2">Id</th>
                         <th class="px-4 py-2">Titolo</th>
-                        <th class="px-4 py-2">Descrizione</th>
+                        {{-- <th class="px-4 py-2">Descrizione</th> --}}
                         <th class="px-4 py-2">Thumb</th>
                         <th class="px-4 py-2">Prezzo</th>
                         <th class="px-4 py-2">Series</th>
                         <th class="px-4 py-2">Sale Date</th>
                         <th class="px-4 py-2">Tipo</th>
+                        <th class="px-4 py-2">Azioni</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,36 +34,41 @@
                     <tr class="bg-white border-b-4">
 
                         <td class="px-4 py-2 border">
-                            {{ $element['id'] }}
+                            {{ $element->id }}
                         </td>
                         
                         <td class="px-4 py-2 border">
                             <a href="{{ route('comics.show', ['comic' => $element['id']]) }}">
-                                {{$element['title']}}
+                                {{$element->titolo}}
                             </a>
                         </td>
                         
                         
                         <td class="px-4 py-2 border">
-                            <img src="{{$element['thumb']}}" alt="Thumb" class="w-20 h-auto">
+                            <img src="{{$element->thumb}}" alt="Thumb" class="w-20 h-auto">
                         </td>
                         
                         <td class="px-4 py-2 border">
-                            {{$element['price']}}
+                            €{{$element->prezzo}}
                         </td>
                         
                         <td class="px-4 py-2 border">
-                            {{$element['series']}}
+                            {{$element->series}}
                         </td>
                         
                         <td class="px-4 py-2 border">
-                            {{$element['sale_date']}}
+                            {{$element->sale_date}}
                         </td>
                         
                         <td class="px-4 py-2 border">
-                            {{$element['type']}}
+                            {{$element->tipo}}
                         </td>
 
+
+                        <td class="">
+                            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">Edit</button>
+                            <button class="text-white bg-blue-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 ">Delete</button>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
