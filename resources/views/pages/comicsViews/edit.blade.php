@@ -12,15 +12,15 @@
         <h1 class="text-4xl font-extrabold mb-5 leading-none tracking-tight text-slate-100 tracking-wide ">Modifica prodotto</h1>
 
             
-        <div class="mb-3">
-            <label for="title" class="form-label block">Titolo</label>
-            <input
-                type="text"
-                class="form-control mt-1 rounded-full bg-transparent border p-1 w-full"
-                name="title"
-                id="titolo"
-                value="{{ old('titolo') ?? $comic->titolo }}"
-            />
+            <div class="mb-3">
+                <label for="titolo" class="form-label block">Titolo</label>
+                <input
+                    type="text"
+                    class="form-control mt-1 rounded-full bg-transparent border p-1 w-full"
+                    name="titolo"
+                    id="titolo"
+                    value="{{ old('titolo') ?? $comic->titolo }}"
+                />
         </div>
 
             <div class="mb-3">
