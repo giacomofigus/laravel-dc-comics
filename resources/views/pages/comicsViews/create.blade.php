@@ -2,10 +2,22 @@
 
 @section('main')
 <main class="flex items-center justify-center h-screen text-white">
+    
     <div class="flex flex-col items-center p-5 px-9  border-4 ">
+        
        <form action="{{ route('comics.store') }}" method="POST" class="">
+        @if($errors->any())
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach    
+            </ul>
+        </div>
+    @endif
 
         <h1 class="text-4xl font-extrabold mb-5 leading-none tracking-tight text-slate-100 tracking-wide ">Inserire nuovo record</h1>
+        
             @csrf
             
             <div class="mb-3">

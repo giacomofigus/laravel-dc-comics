@@ -65,7 +65,7 @@
                         </td>
 
 
-                        <td class="">
+                        <td class="flex items-center justify-center">
                             <a href="{{ route('comics.edit', $element->id) }}"
                                class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-3 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
                             >
