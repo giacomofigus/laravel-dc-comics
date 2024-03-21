@@ -7,14 +7,14 @@
         
        <form action="{{ route('comics.store') }}" method="POST" class="">
         @if($errors->any())
-        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach    
-            </ul>
-        </div>
-    @endif
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach    
+                </ul>
+            </div>
+        @endif
 
         <h1 class="text-4xl font-extrabold mb-5 leading-none tracking-tight text-slate-100 tracking-wide ">Inserire nuovo record</h1>
         
@@ -25,7 +25,7 @@
                 <input
                     type="text"
                     class="form-control mt-1 rounded-full bg-transparent border p-1 w-full"
-                    name="title"
+                    name="titolo"
                     id="title"
                 />
             </div>
@@ -81,11 +81,11 @@
             </div>
             
             <div class="mb-3">
-                <label for="type" class="form-label block">Tipo</label>
+                <label for="tipo" class="form-label block">Tipo</label>
                 <input
                     type="text"
                     class="form-control mt-1 rounded-full bg-transparent p-1 border  w-full"
-                    name="type"
+                    name="tipo"
                     id="type"
                 />
             </div>
